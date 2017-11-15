@@ -1,0 +1,44 @@
+<h1>Get Documents</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<div style="display: table-cell; vertical-align: middle; height: 300px">
+    <textarea name="querybox" style="width: 500px; height: 300px; float: left" [(ngModel)]="_querystring">
+    </textarea>
+    <input type="button" value="Import" (click)="runQuery()" style="float: right; width: 80px; height: 50px; margin: 100px 25px"/>    
+</div>
+
+<table class='table' *ngIf="forecasts">
+    <thead>
+    <tr>
+        <th>DocumentId</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let forecast of forecasts">
+        <td>{{ forecast.key }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!--<p *ngIf="!forecasts"><em>Loading...</em></p>-->
+
+<!--<table class='table' *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.dateFormatted }}</td>
+            <td>{{ forecast.temperatureC }}</td>
+            <td>{{ forecast.temperatureF }}</td>
+            <td>{{ forecast.summary }}</td>
+        </tr>
+    </tbody>
+</table>-->
